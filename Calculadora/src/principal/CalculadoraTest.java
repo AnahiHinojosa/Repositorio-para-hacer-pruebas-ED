@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class CalculadoraTest {
-	
+	//Argumenos que se le dan , el primero es el resultado, y los otros con los q operas
 	static Stream <Arguments>datos(){
 		return Stream.of(
 				
@@ -23,14 +23,14 @@ class CalculadoraTest {
 					
 	}
 
- 
+ 	//se crea si o si, y se pone en el methodsource el nombre del stream
 	@ParameterizedTest
 	@MethodSource("datos")
 	void Sumar(int resultado,int num1, int num2) {
 		Calculadora cal  = new Calculadora ();
 		assertEquals(resultado,cal.Suma(num1, num2));
 	}
-	
+	//por cada metodo se crea uno por separado 
 	static Stream <Arguments>resta(){
 		return Stream.of(
 				
